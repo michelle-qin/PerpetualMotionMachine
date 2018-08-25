@@ -4,7 +4,6 @@
 
 import math
 import sys
-#import spidev
 
 from kivy.app import App
 from kivy.lang import Builder
@@ -43,12 +42,8 @@ CLOSE = True
 YELLOW = .180, 0.188, 0.980, 1
 BLUE = 0.917, 0.796, 0.380, 1
 
-freq_clock = 16000000
-spiFrequency = 16000000
-
 rampLength = 730
 ramp = Stepper.Stepper(port = 0, speed = 100)
-#ramp.initGPIOState()
 
 
 # ////////////////////////////////////////////////////////////////
@@ -58,8 +53,6 @@ ramp = Stepper.Stepper(port = 0, speed = 100)
 #Config.set('graphics', 'width', '500')
 #Config.set('graphics', 'height', '1000')
 sm = ScreenManager()
-
-#initialize()
 
 class MyApp(App):
     def build(self):
@@ -255,11 +248,9 @@ def signal_handler(signal, frame):
 sm.add_widget(MainScreen(name = 'main'))
 sm.add_widget(PauseScene(name = 'pauseScene'))
 
-
 # ////////////////////////////////////////////////////////////////
 # //                          RUN APP                           //
 # ////////////////////////////////////////////////////////////////
-
 
 MyApp().run()
 RPiMIB.closeSPI()
