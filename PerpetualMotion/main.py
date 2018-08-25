@@ -26,9 +26,9 @@ from kivy.config import Config
 from kivy.core.window import Window
 from time import sleep
 import RPi.GPIO as GPIO 
-sys.path.insert(0, "Libraries/Hardware")
+sys.path.insert(0, "/home/pi/Libraries/Hardware")
 import Stepper 
-sys.path.insert(0, "Libraries/Hardware/RPiMIB")
+sys.path.insert(0, "/home/pi/Libraries/Hardware/RPiMIB")
 import RPiMIB
 
 RPiMIB.openSPI()
@@ -67,10 +67,10 @@ class MyApp(App):
         return sm
 
 Builder.load_file('main.kv')
-Builder.load_file('Libraries/Kivy/DPEAButton.kv')
-Builder.load_file('Libraries/Kivy/PauseScene.kv')
+Builder.load_file('/home/pi/Libraries/Kivy/DPEAButton.kv')
+Builder.load_file('/home/pi/Libraries/Kivy/PauseScene.kv')
 Window.clearcolor = (.1, .1,.1, 1) # (WHITE)
-Window.size = (1500, 800)
+#Window.size = (1500, 800)
 
 # ////////////////////////////////////////////////////////////////
 # //                    SLUSH/HARDWARE SETUP                    //

@@ -7,6 +7,17 @@
 	##### BUTTONS ####
         ##################
 
+        # Quit button
+        Button:
+            text: 'X'
+            font_size: 23
+            size_hint: None, None
+            size: root.width * 0.015, root.width * 0.015
+            x: root.width * 0.965
+            y: root.height * 0.945
+            background_color: 0.7, 0.7, 0.7, 1
+            on_release: root.quit()
+
         DPEAButton:  
             id: auto
             color: 0.917, 0.796, 0.380, 1
