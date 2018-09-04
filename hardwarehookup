@@ -1,0 +1,6 @@
+ stepper for rotation - slush stepper motor port 0
+ stepper rotation homing proximity sensor slush port S0
+ Low Tower proximity sensor S1?
+ Upper Tower proximity sensor S2?
+ electromagnet PWM - RPiMIB P5?
+ pneumatic piston PWM - RPiMIB P4?
