@@ -3,4 +3,4 @@
  Low Tower proximity sensor S1 - On Slush I/O Breakout 
  Upper Tower proximity sensor S2 - On Slush I/O Breakout 
  electromagnet PWM - RPiMIB P4 - On RPiMIB
- pneumatic piston PWM - RPiMIB PB7 - On Slush I2C I/O Breakout
+ pneumatic piston PWM - RPiMIB PA4 - On Slush I2C I/O Breakout
