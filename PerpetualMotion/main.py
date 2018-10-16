@@ -1,4 +1,5 @@
 # Michelle Qin
+# 10/16/2018
 
 # ////////////////////////////////////////////////////////////////
 # //                     IMPORT STATEMENTS                      //
@@ -235,8 +236,6 @@ class MainScreen(Screen):
 # "homeRamp" is the function that actually brings the ramp home or top.
     def homeRamp(self, isHome):
         # if you want the ramp to go home, it will change the button to say "Ramp To Top"  (for next round)
-        # and --------- (not sure what ramp.run does??
-        # Note:
         if (isHome == HOME):
             self.ids.ramp.text = "Ramp To Top"
             print('ramp home') 
@@ -368,6 +367,7 @@ class MainScreen(Screen):
         self.submitRamp = False  
         self.notRampSubmissionComplete = False
         self.resubmitState()
+        self.numberOfCycles = 0
         
     def exitProgram(self):
         quitAll()
@@ -407,7 +407,12 @@ def signal_handler(signal, frame):
 
 screen = MainScreen(name = 'main')
 
-#implemented..
+# TL;DR: implemented so staircase and gate can move simultaneously with ramp moving
+# The problem was whenever the ramp would move, no other components would be able to move until the ramp had finished
+# its route. This became rather inefficient for the "Start" process, as the staircase would turn on after the ramp
+# made its long trek back home. So, we went into a back file where ramp.run was defined, and found a while loop that
+# essentially prohibited anything else from happening until ramp was done moving. We changed the while function
+# to execute the same functions but at very small intervals (hence, the Clock.schedule_interval function)
 Clock.schedule_interval(screen.update, 1.0/30.0)
 
 sm.add_widget(screen)
